@@ -9521,4 +9521,17 @@ clearSegments() {
       this.updatePanelWidths();
     }
   },
+  // 在独立窗口中打开扩展
+  async openExtensionInWindow(extension) {
+    let url = `${this.partyURL}/ext/${extension.id}/index.html`;
+    this.loadExtension(extension);
+    this.showExtensionsDialog = false;
+    // extension.systemPrompt填充到this.messages[0].content
+    if (this.currentExtension) {
+      this.messages[0].content = this.currentExtension.systemPrompt;
+    }else {
+      this.messages[0].content = ''; // 清空
+    }
+    window.open(url, '_blank');
+  },
 }

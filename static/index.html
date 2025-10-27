@@ -343,13 +343,26 @@ if ('serviceWorker' in navigator) {
               :class="{ active: currentExtension && currentExtension.id === ext.id }"
               @click="switchExtension(ext)">
               
-              <!-- 右上角图标 -->
+              <!-- 右上角按钮组 -->
               <div class="btn-top-right">
+                <!-- 浏览器打开按钮 -->
                 <el-button
-                  type="primary"
+                  type="default"
                   circle
+                  size="small"
                   @click.stop="openExtension(ext);switchExtension(ext)">
                   <i class="fa-solid fa-external-link"></i>
+                </el-button>
+                
+                <!-- 独立窗口打开按钮（仅在Electron环境下显示） -->
+                <el-button
+                  v-if="isElectron"
+                  type="primary"
+                  circle
+                  size="small"
+                  @click.stop="openExtensionInWindow(ext)"
+                  style="margin-left: 8px;">
+                  <i class="fa-solid fa-window-restore"></i>
                 </el-button>
               </div>
 
@@ -8100,6 +8113,7 @@ if ('serviceWorker' in navigator) {
                             <!-- 启动按钮 -->
                             <el-tooltip :content="t('start_table_pet')" placement="top">
                               <el-button 
+                                v-if="isElectron"
                                 type="primary" 
                                 @click="startVRM" 
                                 circle
@@ -9182,6 +9196,9 @@ if ('serviceWorker' in navigator) {
                         </el-button>
                       </el-tooltip>
                       <div class="card-actions">
+                        <el-button v-if="isElectron" @click="openExtensionInWindow(extension)" type="primary" circle size="small">
+                          <i class="fa-solid fa-window-restore"></i>
+                        </el-button>
                         <el-button @click="openExtension(extension)" type="default" circle size="small">
                           <i class="fa-solid fa-external-link"></i>
                         </el-button>
