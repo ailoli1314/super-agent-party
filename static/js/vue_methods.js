@@ -9281,7 +9281,7 @@ clearSegments() {
           installed: extensions.some(l => l.repository.trim() === r.repository.trim()),
         }));
       } catch (e) {
-        showNotification('获取插件列表失败: ' + e.message, 'error');
+        
       }
     },
   async togglePlugin(plugin) {

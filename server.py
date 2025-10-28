@@ -17,7 +17,6 @@ import numpy as np
 import websockets
 
 from py.load_files import get_file_content
-from py.sherpa_asr import sherpa_recognize
 # 在程序最开始设置
 if hasattr(sys, '_MEIPASS'):
     # 打包后的程序
@@ -4167,6 +4166,7 @@ async def asr_websocket_endpoint(websocket: WebSocket):
                             funasr_websocket = None
 
                         elif asr_engine == "sherpa":
+                            from py.sherpa_asr import sherpa_recognize
                             # 新增Sherpa处理
                             result = await sherpa_recognize(audio_bytes)
                             print(f"Sherpa result: {result}")
