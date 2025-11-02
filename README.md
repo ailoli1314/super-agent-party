@@ -215,6 +215,13 @@ Please refer to the following document for the main functions:
 ## Disclaimer:
 This open-source project and its content (hereinafter referred to as the "project") are for reference only and do not imply any explicit or implicit warranties. The project contributors do not assume any responsibility for the completeness, accuracy, reliability, or applicability of the project. Any behavior that relies on the project content shall be at the user's own risk. In any case, the project contributors shall not be liable for any indirect, special, or incidental losses or damages arising from the use of the project content.
 
+## Special Note  
+Some features of this open-source project (such as Edge TTS voice synthesis, Bilibili WebSocket danmaku monitoring, etc.) rely on public interfaces or experimental functionalities provided by third-party services. These features may become unavailable at any time due to policy changes by the third parties. The developers are not responsible for their stability, legality, or continuity.  
+
+The QQ bot utilizes the official QQ bot interface. Please comply with the [AIGC Access to QQ Bot Guidelines](https://q.qq.com/#/news/detail?id=1376238e8e2fbbc036676bb09d2f37da).  
+
+By using these features, users acknowledge and agree to assume the associated risks. The developers do not recommend or encourage the use of these features for commercial or large-scale deployment scenarios.
+
 ## License Agreement
 
 This project uses a dual licensing model:
