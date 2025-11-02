@@ -6471,7 +6471,6 @@ mcp.mount()
 app.mount("/vrm", StaticFiles(directory=DEFAULT_VRM_DIR), name="vrm")
 app.mount("/tool_temp", StaticFiles(directory=TOOL_TEMP_DIR), name="vrm")
 app.mount("/uploaded_files", StaticFiles(directory=UPLOAD_FILES_DIR), name="uploaded_files")
-app.mount("/node_modules", StaticFiles(directory=os.path.join(base_path, "node_modules")), name="node_modules")
 app.mount("/", StaticFiles(directory=os.path.join(base_path, "static"), html=True), name="static")
 
 # 简化main函数

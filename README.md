@@ -107,6 +107,9 @@ We provide two mainstream Linux installation package formats for your convenienc
   cd super-agent-party
   uv sync
   npm install
+  cd static
+  npm install
+  cd ..
   start_with_dev.bat
   ```
 
@@ -116,6 +119,9 @@ We provide two mainstream Linux installation package formats for your convenienc
   cd super-agent-party
   uv sync
   npm install
+  cd static
+  npm install
+  cd ..
   chmod +x start_with_dev.sh
   ./start_with_dev.sh
   ```
